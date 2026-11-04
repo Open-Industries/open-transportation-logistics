@@ -1,0 +1,15 @@
+# Routing Rules Service
+
+Bounded context: **Routing Rules** — Decision rules binding transport modes to distance and transit-time envelopes.
+
+Alignment: Network policy as auditable rules. Decisions are `ALLOWED` / `DEGRADED` / `DENIED`, always
+with the matched rule and a human-readable reason for audit. All data is synthetic.
+
+| Item | Value |
+|---|---|
+| Port | `8083` (`HTTP_PORT`) |
+| Base path | `/api/v1/routing-rules` |
+| Owns data | RoutingRule rules |
+| Publishes | `routing.activated` |
+
+Run locally: `mvn -pl services/routing-rules-service quarkus:dev`.
